@@ -44,7 +44,6 @@ We use the UCI Bank Marketing Dataset, which contains customer demographic, fina
 ### 4. Data Preprocessing
 - One-hot encoding for categorical variables  
 - Min-Max normalization for numerical features  
-- Separation of features (X) and target (y)  
 
 ---
 
@@ -61,7 +60,7 @@ Due to class imbalance, we focus on:
 - **Precision** – reduce wasted marketing effort  
 - **Recall** – identify potential customers  
 - **F1-score** – balance between precision and recall  
-- Accuracy (for reference only)  
+- Accuracy
 
 ---
 
@@ -103,3 +102,5 @@ A web application is built using Streamlit:
 ---
 
 ## 📁 Project Structure  
+**TO BE EDITED**
+
