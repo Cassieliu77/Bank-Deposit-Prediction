@@ -11,6 +11,7 @@ This is a minimal Streamlit interface for bank marketing project.
 ### Context placeholder
 - A simple landing page
 - A logistic regression **single-sample prediction** page
+- A decision tree **single-sample prediction** page
 
 ### Member placeholder
 - Camile Tong, zt275
@@ -18,8 +19,9 @@ This is a minimal Streamlit interface for bank marketing project.
 
 ### How to use
 1. Open the left sidebar and go to **Logistic Regression Predict**
-2. Fill the form inputs
-3. Click **Predict**
+2. Open **Decision Tree Predict** for tree-based scoring
+3. Fill the form inputs
+4. Click **Predict**
 """
 )
 
