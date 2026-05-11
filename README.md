@@ -65,7 +65,7 @@ Due to class imbalance, we focus on:
 ---
 
 ## 🌐 Deployment  
-
+**To run Streamlit application: streamlit run home.py**
 A web application is built using Streamlit:
 
 - Input customer features  
