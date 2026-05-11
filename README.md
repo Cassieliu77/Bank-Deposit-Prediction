@@ -1,106 +1,136 @@
-# 📊 Bank Deposit Prediction
+# 📊 Customer Subscription Prediction for Bank Marketing: A Tradeoff Between Recall and Targeting Efficiency
 
-## 📌 Overview  
-This project aims to improve bank marketing efficiency by predicting whether a customer will subscribe to a term deposit. Direct marketing campaigns are costly and often involve contacting many uninterested customers. By leveraging machine learning, this project helps identify high-potential customers and optimize resource allocation.
+## Overview
 
-The project builds an end-to-end pipeline, including data exploration, preprocessing, feature engineering, model development, and deployment using a web-based interface.
+This project predicts whether a bank customer will subscribe to a term deposit using machine learning classification models. The goal is to improve bank marketing efficiency by identifying high-potential customers while balancing customer coverage and outreach efficiency.
 
----
-
-## 🎯 Objectives  
-- Predict customer subscription to term deposits (binary classification)  
-- Improve marketing efficiency by reducing unnecessary outreach  
-- Build interpretable models for business decision-making  
-- Deploy a simple application for real-time prediction  
+The project includes:
+- Exploratory Data Analysis (EDA)
+- Data preprocessing and feature engineering
+- Model training from scratch using NumPy
+- Model evaluation and comparison
+- Streamlit deployment for real-time prediction
 
 ---
 
-## 📂 Dataset  
-We use the UCI Bank Marketing Dataset, which contains customer demographic, financial, and campaign-related information collected from a Portuguese bank.
+## Dataset
 
-- Number of samples: ~45,000  
-- Features: Demographic, financial, and campaign data  
-- Target: Whether the client subscribed to a term deposit (`yes` / `no`)  
+This project uses the UCI Bank Marketing Dataset, which contains customer demographic, financial, and campaign-related information collected from a Portuguese bank.
 
----
-
-## 🔍 Data Processing Pipeline  
-
-### 1. Exploratory Data Analysis (EDA)
-- Examined class imbalance (low subscription rate)  
-- Analyzed distributions of numerical features  
-- Explored relationships between features and target  
-
-### 2. Data Cleaning
-- Handled missing values by treating them as informative categories  
-- Removed `duration` to prevent data leakage  
-- Capped outliers in `balance` using IQR method  
-
-### 3. Feature Engineering
-- Converted binary variables (`yes/no`) to numeric format  
-- Created `previous_contact` from `pdays`  
-- Constructed `pdays_clean` to handle special values (-1)  
-
-### 4. Data Preprocessing
-- One-hot encoding for categorical variables  
-- Min-Max normalization for numerical features  
+- ~45,000 customer records
+- Numerical and categorical features
+- Binary target variable: term deposit subscription (`yes` / `no`)
 
 ---
 
-## 🤖 Models  
+## Repository Contents
 
-**TO BE EDITED**
-
----
-
-## 📊 Evaluation Metrics  
-
-Due to class imbalance, we focus on:
-
-- **Precision** – reduce wasted marketing effort  
-- **Recall** – identify potential customers  
-- **F1-score** – balance between precision and recall  
-- Accuracy
-
----
-
-## 🌐 Deployment  
-**To run Streamlit application: streamlit run home.py**
-A web application is built using Streamlit:
-
-- Input customer features  
-- Apply preprocessing pipeline  
-- Generate prediction probability  
-- Provide recommendation (e.g., High / Low potential)  
+```bash
+.
+├── home.py                                   # Main Streamlit application
+├── pages/                                    # Additional Streamlit pages
+├── utils/                                    # Helper functions and utilities
+├── Bank_Marketing_Preprocessing.ipynb        # Data cleaning and preprocessing
+├── logistic_regression.ipynb                 # Logistic Regression implementation
+├── decision_tree_updated.ipynb               # Decision Tree implementation
+├── model_comparison.ipynb                    # Model evaluation and comparison
+├── cleaned_data.csv                          # Processed dataset
+├── README.md
+└── LICENSE
+```
 
 ---
 
-## 🧠 Key Insights  
-- Customer contact history is highly predictive  
-- Financial indicators (e.g., balance) influence subscription likelihood  
-- Proper feature engineering significantly improves model performance  
+## Machine Learning Pipeline
+
+### Data Processing
+The preprocessing pipeline includes:
+- Handling missing categorical values
+- Removing `duration` to prevent data leakage
+- Feature engineering from `pdays`
+- One-hot encoding categorical variables
+- Standardizing continuous variables
+- Handling skewed distributions and outliers
+
+### Models
+Two classification models were implemented entirely from scratch using NumPy:
+- Logistic Regression
+- Decision Tree
+
+### Evaluation Metrics
+Because the dataset is highly imbalanced, the project focuses on:
+- Precision
+- Recall
+- F1-score
+- F2-score
+- AUC-ROC
+- AUC-PR
+- ALIFT
+
+The project compares the tradeoff between:
+- Higher Recall and broader lead capture
+- Higher Precision and more efficient customer targeting
 
 ---
 
-## ⚠️ Challenges & Solutions  
+## Running the Streamlit Application
 
-| Challenge | Solution |
-|----------|--------|
-| Class imbalance | Use F1-score and Recall |
-| Data leakage | Remove `duration` |
-| Mixed feature types | Apply encoding and normalization |
-| Special values (`pdays = -1`) | Feature engineering |
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-link>
+cd <repository-name>
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If `requirements.txt` is unavailable, install the required packages manually:
+
+```bash
+pip install streamlit pandas numpy matplotlib
+```
+
+### 3. Run the Application
+
+```bash
+streamlit run home.py
+```
+
+The Streamlit application allows users to:
+- Input customer information
+- Apply the preprocessing pipeline
+- Generate subscription probability predictions
 
 ---
 
-## 🚀 Future Improvements  
-- Add more advanced models (e.g., XGBoost)  
-- Perform hyperparameter tuning  
-- Incorporate cost-sensitive learning  
-- Improve UI/UX of the application  
+## Key Insights
+
+- Previous campaign success is highly predictive
+- Customer contact history strongly affects subscription likelihood
+- Logistic Regression captures more potential subscribers through higher Recall
+- Decision Tree provides stronger targeting efficiency and reduces unnecessary outreach
 
 ---
 
-## 📁 Project Structure  
-**TO BE EDITED**
+## Future Improvements
+
+Potential future improvements include:
+- Ensemble models such as Random Forest or XGBoost
+- Cost-sensitive optimization
+- Probability calibration
+- Improved Streamlit UI/UX
+
+---
+
+## Tech Stack
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Streamlit
 
