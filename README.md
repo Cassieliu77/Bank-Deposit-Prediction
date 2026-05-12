@@ -73,9 +73,12 @@ The project compares the tradeoff between:
 
 ---
 
-## Running the Streamlit Application
+## Streamlit Application
 
-### 1. Clone the Repository
+### 0. Deployed Streamlit
+https://bdp-home.streamlit.app/
+
+### 1. To run locally, clone the Repository
 
 ```bash
 git clone <your-repository-link>
@@ -133,6 +136,3 @@ Potential future improvements include:
 - Pandas
 - Matplotlib
 - Streamlit
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/dJBAHCPL)
-# final_project_submissions
